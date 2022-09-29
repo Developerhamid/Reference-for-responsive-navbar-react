@@ -1,0 +1,159 @@
+/* ===========================================
+  We can also show Mobile menu bar horizantally
+  And for that simply convert  property translateY to translateX
+  And Also (hidden) both overflow-x for html as-well-as body
+  =========================================== */
+
+/* html {
+  overflow-y: hidden;
+} */
+
+/* body {
+  overflow-y: hidden;
+} */
+
+.header {
+  height: 12vh;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.logo-container h2 {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #6cbe0d;
+}
+
+.logo-container span {
+  font-size: 2.5rem;
+  color: var(--theme-clr);
+}
+
+.nav-list {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.nav-list a {
+  font-size: 1.3rem;
+  color: #000000;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: var(--theme-clr);
+  border-bottom: 2px solid var(--theme-clr);
+}
+
+.second-half {
+  border: 2px solid green;
+}
+
+/* ===========================================
+        Hamburgur Menu Css For Desktop
+  =========================================== */
+
+.mobile-menu {
+  border: 2px solid green;
+  cursor: pointer;
+  display: none;
+  z-index: 999;
+}
+
+.menu-open-line {
+  width: 28px;
+  height: 4px;
+  margin: 4px;
+  background: #000000;
+  border-radius: 3px;
+}
+
+.close-menu-line {
+  width: 32px;
+  height: 5px;
+  background: var(--theme-clr);
+  margin: 3px;
+  border-radius: 5px;
+}
+
+.close-menu p:nth-child(1) {
+  transform: rotate(313deg);
+}
+
+.close-menu p:nth-child(2) {
+  transform: rotate(43deg);
+  position: relative;
+  bottom: 7px;
+}
+
+/* ===========================================
+        Hamburgur Menu Css For Mobile
+  =========================================== */
+
+@media screen and (max-width: 980px) {
+  .header {
+    padding: 0 10px;
+    justify-content: space-between;
+  }
+
+  .logo-container h2 {
+    font-size: 1.2rem;
+    font-weight: 100;
+  }
+
+  .logo-container span {
+    font-size: 1.8rem;
+  }
+
+  .mobile-menu {
+    display: inline-block;
+  }
+
+  .navbar {
+    width: 100%;
+    height: 100vh;
+    background: grey;
+    top: 0;
+    left: 0;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: 0.3s ease-out;
+    background: #c9e9a4;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+  }
+
+  /* ===========================================
+        Visible Hamburgur Menu Css For Mobile
+  =========================================== */
+
+  .show-mobile-menu {
+    transform: translateY(0);
+    pointer-events: all;
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .show-menu-btns {
+    display: none;
+  }
+
+  .remove-border {
+    border: none;
+  }
+}
